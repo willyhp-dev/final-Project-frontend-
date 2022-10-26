@@ -1,0 +1,13 @@
+
+.sizeh{
+    font-size: 14px;
+}
+.links{
+    text-decoration: none;
+    color: white;
+    margin-right:  10px;
+}
+.links-hover{
+    color: black;
+}
+
