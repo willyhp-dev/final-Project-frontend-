@@ -12,9 +12,14 @@ const todoReducer = (state = [], action) => {
       case "HITUNG_TRANSAKSI":
         return action.result.data;
 
+      case "SEARCH_USER":
+        return action.result.data;
+
       case "SAVE_TRANSAKSI":
         return [action.result.data, ...state];
-        
+      
+      case "SAVE_USER":
+        return action.result.data
       default:
         return state;
     }

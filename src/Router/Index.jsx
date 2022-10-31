@@ -5,7 +5,9 @@ import '../View/Style/index.css';
 import Transaksi from '../View/Transaksi';
 import InfohPelanggan from '../View/SearchPelanggan';
 import InfohTransaksi from '../View/SearchTrx';
-
+import SearchUser from '../View/User/Index';
+import UserBaru from '../View/User/UserBaru';
+import DetailUpdate from '../View/User/DetailUpdate';
 
 const DetailTrx = ()=>{
     return <Transaksi/>
@@ -19,11 +21,25 @@ const RouterTransaksi = () =>{
     return <InfohTransaksi/>
 }
 
+const RouterUser = () =>{
+    return <SearchUser/>
+}
+
+const BaruUser = () =>{
+    return <UserBaru/>
+}
+
+const UpdateDetail = () =>{
+    return <DetailUpdate/>
+}
+
 const LinkRouter = () =>{
     return(
         <>
            <Routes>
-                <Route path = "/" element ={<DetailTrx/>} />
+                <Route path = "/" element ={<SearchUser/>} />
+                <Route path = "/userbaru" element = {<BaruUser/>}/>
+                <Route path = "/detailuser/:id" element = {<UpdateDetail/>}/>
                 <Route path = "/searchPelanggan" element = {<InfohPelanggan/>}/>
                 <Route path = "/searchTransaksi" element = {<InfohTransaksi/>}/>
             </Routes>    

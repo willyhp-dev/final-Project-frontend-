@@ -4,6 +4,7 @@ import './Style/index.css';
 import {useDispatch, useSelector} from "react-redux";
 import {hitungTransaksi,transaksiSave } from "../Action/todoAction.js";
 import { FormatRupiah } from "@arismun/format-rupiah";
+
 {/* Informasi Transaksi */}
 export default function Transaksi(){
     const dispatch = useDispatch();
@@ -23,8 +24,6 @@ export default function Transaksi(){
     
         })
      
-    
-       
     {/* Form Barang Gadai */}
     const BarangGadai = ()=>{
   
@@ -87,8 +86,6 @@ export default function Transaksi(){
         const group = {namaBarang,kondisi,jumlah,hargaPersatuan}
         setTransaksi((ls)=>({...ls,daftarBarangGadai:[...ls.daftarBarangGadai,group]}));
     }
-    
-    
     return (
         <>
         <Card>
@@ -106,6 +103,7 @@ export default function Transaksi(){
                          value = {namaBarang}
                         />
                     </div>
+
                     <div className = "col-sm-3">
                         {/*Deskripsi */}
                         <div className = "sizeh">Deskripsi</div>
@@ -154,14 +152,9 @@ export default function Transaksi(){
         }
 
         const HitungTest = ()=>{
-            const data = localStorage.setItem('transaksi', JSON.stringify(transaksi));
+            localStorage.setItem('transaksi', JSON.stringify(transaksi));
             dispatch(hitungTransaksi(transaksi));
-            if(data){
                 setsave(true);
-             
-            }
-           
-           
         }
         const cancelTransaksi = () =>{
             setsave(false);
